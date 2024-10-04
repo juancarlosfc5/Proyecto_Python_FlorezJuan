@@ -4,6 +4,7 @@ import modules.messages as msg
 import modules.menu as m
 
 if (__name__ == '__main__'):
+    origin ={}
     isApp = True
     while isApp:
         ut.borrar()
@@ -15,16 +16,17 @@ if (__name__ == '__main__'):
             ut.pausar()
         else:
             match opcion:
-                case 1: #Partida 1 vs 1
+                case 1: #Iniciar sesión
                     ut.borrar()
-                    
-                case 2: #Partida 1 vs IA
+                case 2: #Partida 1 vs 1
                     ut.borrar()
-                case 3: #Estadisticas generales
+                case 3: #Partida 1 vs IA
                     ut.borrar()
-                case 4: #Tabla de puntos
+                case 4: #Estadisticas generales
                     ut.borrar()
-                case 5: #Salir
+                case 5: #Tabla de puntos
+                    ut.borrar()
+                case 6: #Salir
                     print(msg.validate)
                     ut.validate()
                 case _:
