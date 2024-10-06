@@ -16,14 +16,17 @@ players = {
 def addPlayer(origin):
     ut.borrar()
     newPlayer = copy.deepcopy(players)
-    nombre = input('Ingrese el nombre del usuario: ')
-    nickname = input('Ingrese el nickname del usuario: ')
+    nombre = input('Ingrese el nombre completo del usuario: ')
+    while True:
+        ut.borrar()
+        nickname = input('Ingrese el nickname del usuario: ')
+        if nickname in origin:
+            print(msg.errorNickname)
+            ut.pausar()
+        else:
+            break
     newPlayer['nombre'] = nombre
     newPlayer['nickname'] = nickname
-    if (nickname == 'pass'): #Jugador con nickname creado
-        pass
-        print(msg.errorNickname)
-    else: #Crear jugador
-        origin[nickname] = newPlayer
-        print(f"Usuario '{nickname}' registrado con éxito.")
-        ut.pausar()
+    origin[nickname] = newPlayer
+    print(f"\nUsuario '{nickname}' registrado con éxito.")
+    ut.pausar()
