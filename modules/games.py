@@ -8,7 +8,6 @@ import modules.players as pl
 opciones = ['piedra', 'papel', 'tijera']
 
 # Jugador vs IA
-
 def rondaIA(origin):
     ut.borrar()
     print('Inicia la ronda\n')
@@ -96,7 +95,6 @@ def juegoIA(origin):
                 isJuegoIA = False
 
 # Jugador 1 vs 1
-
 def ronda1vs1(origin):
     ut.borrar()
     print('Inicia la ronda\n')
