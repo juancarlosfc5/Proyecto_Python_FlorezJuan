@@ -110,9 +110,9 @@ def ronda1vs1(origin):
     if eleccionJugador1 == eleccionJugador2:
         return 'empate' # Retorno de empate
     elif (eleccionJugador1 == 'piedra' and eleccionJugador2 == 'tijera') or (eleccionJugador1 == 'tijera' and eleccionJugador2 == 'papel') or (eleccionJugador1 == 'papel' and eleccionJugador2 == 'piedra'):
-        return 'usuario1' # Retorno del jugador 1 como ganador
+        return 'jugador1' # Retorno del jugador 1 como ganador
     else:
-        return 'usuario2' # Retorno del jugador 2 como ganador
+        return 'jugador2' # Retorno del jugador 2 como ganador
     
 def juego1vs1(origin):
     rondasJugador1 = 0
@@ -124,14 +124,14 @@ def juego1vs1(origin):
     isJuego1vs1 = True
     while isJuego1vs1:
         ut.borrar()
-        nickname = input('Ingrese el nickname del usuario 1: ')
+        nickname = input('Ingrese el nickname del jugador 1: ')
         jugador1 = nickname
         if nickname not in origin: # Verificar si el nickname del jugador 1 esta disponible
             print(msg.errorNoNickname)
             ut.pausar()
             break
         ut.borrar()
-        nickname = input('Ingrese el nickname del usuario 2: ')
+        nickname = input('Ingrese el nickname del jugador 2: ')
         jugador2 = nickname
         if nickname not in origin: # Verificar si el nickname del jugador 2 esta disponible
             print(msg.errorNoNickname)
@@ -143,30 +143,30 @@ def juego1vs1(origin):
             ut.pausar()
             while rondasJugador1 < 3 and rondasJugador2 < 3: # Criterio mejor de 3 rondas
                 resultado = ronda1vs1(origin)
-                if resultado == 'usuario1': # Incrementar victorias consecutivas del jugador
+                if resultado == 'jugador1': # Incrementar victorias consecutivas del jugador
                     contadorJugador1 += 1
                     contadorJugador2 = 0
                     if contadorJugador1 == 2: # Asignar escudo al jugador 1
                         escudoJugador1 = True
-                        print("\n¡Has ganado dos rondas consecutivas! Escudo activado.")
-                    if escudoJugador2 == True: # Verificar escudo del jugador 1
+                        print(f"\n¡{jugador1} ha ganado dos rondas consecutivas! Escudo activado.")
+                    if escudoJugador2 == True: # Verificar escudo del jugador 2
                         escudoJugador2 = False
-                        print("\n¡La IA perdió, pero su escudo la protegió!")
+                        print(f"\n¡{jugador2} perdió, pero su escudo la protegió!")
                     else: # Incrementar ronda del jugador 1
                         rondasJugador1 += 1
                         print(f"\n¡{jugador1} ganó esta ronda! --- {jugador1}: {rondasJugador1} - {jugador2} {rondasJugador2}\n")
                         ut.pausar()
-                elif resultado == 'usuario2': # Incrementar victorias consecutivas del jugador 2
+                elif resultado == 'jugador2': # Incrementar victorias consecutivas del jugador 2
                     contadorJugador2 += 1
                     contadorJugador1 = 0
                     if contadorJugador2 == 2: # Asignar escudo al jugador 2
                         escudoJugador2 = True
-                        print("\n¡La IA ha ganado dos rondas consecutivas! Escudo activado.")
+                        print(f"\n¡{jugador2} ha ganado dos rondas consecutivas! Escudo activado.")
                     if escudoJugador1 == True: # Verificar escudo del jugador 1
                         escudoJugador1 = False
-                        print("\n¡Has perdido, pero tu escudo te protegiós!")
+                        print(f"\n¡{jugador1} perdió, pero su escudo la protegió!")
                     else: # Incrementar ronda de la IA
-                        rondasIA += 1
+                        rondasJugador2 += 1
                         print(f"\n¡{jugador2} ganó esta ronda! --- {jugador1}: {rondasJugador1} - {jugador2} {rondasJugador2}\n")
                         ut.pausar()
                 elif resultado == 'empate': # Validar empate
@@ -174,13 +174,17 @@ def juego1vs1(origin):
                     ut.pausar()
 
             if rondasJugador1 == 3:
-                origin[jugador1]['winIA'] += 1  # Asignar victoria del jugador ante la IA
+                origin[jugador1]['puntos'] += 2  # Asignar puntos al jugador 1
+                origin[jugador1]['win'] += 1  # Asignar victoria del jugador 1
+                origin[jugador2]['lose'] += 1  # Asignar derrota del jugador 2
                 ut.borrar()
                 print(f'¡Felicitaciones {jugador1} ! Has ganado la partida.\n')
                 ut.pausar()
                 isJuego1vs1 = False
-            elif rondasJugador2 == 3:
-                origin[jugador2]['loseIA'] += 1  # Asignar derrota del jugador ante la IA
+            else:
+                origin[jugador2]['puntos'] += 2  # Asignar puntos al jugador 1
+                origin[jugador2]['win'] += 1  # Asignar victoria del jugador 1
+                origin[jugador1]['lose'] += 1  # Asignar derrota del jugador 2
                 ut.borrar()
                 print(f'¡Felicitaciones {jugador2} ! Has ganado la partida.\n')
                 ut.pausar()
