@@ -21,7 +21,7 @@ if (__name__ == '__main__'):
                 case 1: # Crear usuario
                     pl.addPlayer(origin)
                 case 2: # Partida 1 vs 1
-                    ut.borrar()
+                    gm.juego1vs1(origin)
                 case 3: # Partida 1 vs IA
                     gm.juegoIA(origin)
                 case 4: # Estadisticas generales
