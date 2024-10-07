@@ -29,5 +29,5 @@ def addPlayer(origin): # Agregar usuario
     newPlayer['nombre'] = nombre
     newPlayer['nickname'] = nickname
     origin[nickname] = newPlayer # Insertar diccionario copia dentro del diccionario Origin
-    print(f"\nUsuario '{nickname}' registrado con éxito.\n")
+    print(f'\nUsuario "{nickname}" registrado con éxito.\n')
     ut.pausar()

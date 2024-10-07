@@ -11,14 +11,14 @@ opciones = ['piedra', 'papel', 'tijera']
 
 def rondaIA(origin):
     ut.borrar()
-    print("Inicia la ronda\n")
+    print('Inicia la ronda\n')
     eleccionIA = random.choice(opciones) # La IA elige una opción al azar
-    eleccionJugador = input("Escribe tu elección piedra, papel o tijera: ").lower() # El jugador elige su jugada
+    eleccionJugador = input('Escribe tu elección piedra, papel o tijera: ').lower() # El jugador elige su jugada
     while eleccionJugador not in opciones:
-        eleccionJugador = input("Opción inválida. Escribe nuevamente tu elección piedra, papel o tijera: ").lower()
+        eleccionJugador = input('Opción inválida. Escribe nuevamente tu elección piedra, papel o tijera: ').lower()
     ut.borrar()
-    print(f"Tu elegiste: {eleccionJugador}")
-    print(f"La IA eligió: {eleccionIA}")
+    print(f'Tu elegiste: {eleccionJugador}')
+    print(f'La IA eligió: {eleccionIA}')
     # Determinar el resultado de la ronda
     if eleccionJugador == eleccionIA:
         return 'empate' # Retorno de empate
@@ -53,45 +53,45 @@ def juegoIA(origin):
                     contadorIA = 0
                     if contadorJugador == 2: # Asignar escudo al jugador
                         escudoJugador = True
-                        print("\n¡Has ganado dos rondas consecutivas! Escudo activado.")
+                        print('\n¡Has ganado dos rondas consecutivas! Escudo activado')
                     if escudoIA == True: # Verificar escudo de la IA
                         escudoIA = False
-                        print("\n¡La IA perdió, pero su escudo la protegió!\n")
+                        print('\n¡La IA perdió, pero su escudo la protegió!\n')
                         ut.pausar()
                     else: # Incrementar ronda del jugador
                         rondasJugador += 1
-                        print(f"\n¡Ganaste esta ronda! --- Usuario: {rondasJugador} - IA {rondasIA}\n")
+                        print(f'\n¡Ganaste esta ronda! --- Usuario: {rondasJugador} - IA {rondasIA}\n')
                         ut.pausar()
                 elif resultado == 'ia': # Incrementar victorias consecutivas de la IA
                     contadorIA += 1
                     contadorJugador = 0
                     if contadorIA == 2: # Asignar escudo a la IA
                         escudoIA = True
-                        print("\n¡La IA ha ganado dos rondas consecutivas! Escudo activado.")
+                        print('\n¡La IA ha ganado dos rondas consecutivas! Escudo activado')
                     if escudoJugador == True: # Verificar escudo del jugador
                         escudoJugador = False
-                        print("\n¡Has perdido, pero tu escudo te protegiós!\n")
+                        print('\n¡Has perdido, pero tu escudo te protegiós!\n')
                         ut.pausar()
                     else: # Incrementar ronda de la IA
                         rondasIA += 1
-                        print(f"\n¡La IA ganó esta ronda! --- Usuario: {rondasJugador} - IA {rondasIA}\n")
+                        print(f'\n¡La IA ganó esta ronda! --- Usuario: {rondasJugador} - IA {rondasIA}\n')
                         ut.pausar()
                 elif resultado == 'empate': # Validar empate
                     contadorJugador = 0
                     contadorIA = 0
-                    print(f"\n¡Empate! --- Usuario: {rondasJugador} - IA {rondasIA}\n")
+                    print(f'\n¡Empate! --- Usuario: {rondasJugador} - IA {rondasIA}\n')
                     ut.pausar()
 
             if rondasJugador == 3:
                 origin[nickname]['winIA'] += 1  # Asignar victoria del jugador ante la IA
                 ut.borrar()
-                print(f"¡Felicitaciones ! {nickname} has ganado la partida.\n")
+                print(f'¡Felicitaciones ! {nickname} has ganado la partida\n')
                 ut.pausar()
                 isJuegoIA = False
             else:
                 origin[nickname]['loseIA'] += 1  # Asignar derrota del jugador ante la IA
                 ut.borrar()
-                print("¡Lo siento! La IA ha ganado la partida.\n")
+                print('¡Lo siento! La IA ha ganado la partida\n')
                 ut.pausar()
                 isJuegoIA = False
 
@@ -99,17 +99,17 @@ def juegoIA(origin):
 
 def ronda1vs1(origin):
     ut.borrar()
-    print("Inicia la ronda\n")
-    eleccionJugador1 = input("Jugador 1 escribe tu elección piedra, papel o tijera: ").lower() # El jugador elige su jugada
+    print('Inicia la ronda\n')
+    eleccionJugador1 = input('Jugador 1 escribe tu elección piedra, papel o tijera: ').lower() # El jugador elige su jugada
     while eleccionJugador1 not in opciones:
-        eleccionJugador1 = input("Opción inválida. Jugador 1 escribe nuevamente tu elección piedra, papel o tijera: ").lower()
+        eleccionJugador1 = input('Opción inválida. Jugador 1 escribe nuevamente tu elección piedra, papel o tijera: ').lower()
     ut.borrar()
-    eleccionJugador2 = input("Jugador 2 escribe tu elección piedra, papel o tijera: ").lower() # El jugador elige su jugada
+    eleccionJugador2 = input('Jugador 2 escribe tu elección piedra, papel o tijera: ').lower() # El jugador elige su jugada
     while eleccionJugador2 not in opciones:
-        eleccionJugador2 = input("Opción inválida. Jugador 2 escribe nuevamente tu elección piedra, papel o tijera: ").lower()
+        eleccionJugador2 = input('Opción inválida. Jugador 2 escribe nuevamente tu elección piedra, papel o tijera: ').lower()
     ut.borrar()
-    print(f"Jugador 1 elegió: {eleccionJugador1}")
-    print(f"Jugador 2 elegió: {eleccionJugador2}")
+    print(f'Jugador 1 elegió: {eleccionJugador1}')
+    print(f'Jugador 2 elegió: {eleccionJugador2}')
     # Determinar el resultado de la ronda
     if eleccionJugador1 == eleccionJugador2:
         return 'empate' # Retorno de empate
@@ -152,33 +152,33 @@ def juego1vs1(origin):
                     contadorJugador2 = 0
                     if contadorJugador1 == 2: # Asignar escudo al jugador 1
                         escudoJugador1 = True
-                        print(f"\n¡{jugador1} ha ganado dos rondas consecutivas! Escudo activado.")
+                        print(f'\n¡{jugador1} ha ganado dos rondas consecutivas! Escudo activado')
                     if escudoJugador2 == True: # Verificar escudo del jugador 2
                         escudoJugador2 = False
-                        print(f"\n¡{jugador2} perdió, pero su escudo la protegió!\n")
+                        print(f'\n¡{jugador2} perdió, pero su escudo la protegió!\n')
                         ut.pausar()
                     else: # Incrementar ronda del jugador 1
                         rondasJugador1 += 1
-                        print(f"\n¡{jugador1} ganó esta ronda! --- {jugador1}: {rondasJugador1} - {jugador2} {rondasJugador2}\n")
+                        print(f'\n¡{jugador1} ganó esta ronda! --- {jugador1}: {rondasJugador1} - {jugador2} {rondasJugador2}\n')
                         ut.pausar()
                 elif resultado == 'jugador2': # Incrementar victorias consecutivas del jugador 2
                     contadorJugador2 += 1
                     contadorJugador1 = 0
                     if contadorJugador2 == 2: # Asignar escudo al jugador 2
                         escudoJugador2 = True
-                        print(f"\n¡{jugador2} ha ganado dos rondas consecutivas! Escudo activado.")
+                        print(f'\n¡{jugador2} ha ganado dos rondas consecutivas! Escudo activado')
                     if escudoJugador1 == True: # Verificar escudo del jugador 1
                         escudoJugador1 = False
-                        print(f"\n¡{jugador1} perdió, pero su escudo la protegió!\n")
+                        print(f'\n¡{jugador1} perdió, pero su escudo la protegió!\n')
                         ut.pausar()
                     else: # Incrementar ronda de la IA
                         rondasJugador2 += 1
-                        print(f"\n¡{jugador2} ganó esta ronda! --- {jugador1}: {rondasJugador1} - {jugador2} {rondasJugador2}\n")
+                        print(f'\n¡{jugador2} ganó esta ronda! --- {jugador1}: {rondasJugador1} - {jugador2} {rondasJugador2}\n')
                         ut.pausar()
                 elif resultado == 'empate': # Validar empate
                     contadorJugador1 = 0
                     contadorJugador2 = 0
-                    print(f"\n¡Empate! --- {jugador1}: {rondasJugador1} - {jugador2} {rondasJugador2}\n")
+                    print(f'\n¡Empate! --- {jugador1}: {rondasJugador1} - {jugador2} {rondasJugador2}\n')
                     ut.pausar()
 
             if rondasJugador1 == 3:
