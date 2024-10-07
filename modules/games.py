@@ -85,12 +85,14 @@ def juegoIA(origin):
                 origin[nickname]['winIA'] += 1  # Asignar victoria del jugador ante la IA
                 ut.borrar()
                 print(f'¡Felicitaciones ! {nickname} has ganado la partida\n')
+                cr.AddData(origin)
                 ut.pausar()
                 isJuegoIA = False
             else:
                 origin[nickname]['loseIA'] += 1  # Asignar derrota del jugador ante la IA
                 ut.borrar()
                 print('¡Lo siento! La IA ha ganado la partida\n')
+                cr.AddData(origin)
                 ut.pausar()
                 isJuegoIA = False
 
@@ -185,6 +187,7 @@ def juego1vs1(origin):
                 origin[jugador2]['lose'] += 1  # Asignar derrota del jugador 2
                 ut.borrar()
                 print(f'¡Felicitaciones {jugador1} ! Has ganado la partida.\n')
+                cr.AddData(origin)
                 ut.pausar()
                 isJuego1vs1 = False
             else:
@@ -193,5 +196,6 @@ def juego1vs1(origin):
                 origin[jugador1]['lose'] += 1  # Asignar derrota del jugador 2
                 ut.borrar()
                 print(f'¡Felicitaciones {jugador2} ! Has ganado la partida.\n')
+                cr.AddData(origin)
                 ut.pausar()
                 isJuego1vs1 = False

@@ -1,6 +1,7 @@
 import modules.utils as ut
 
 def viewStats1vs1(origin):
+    ut.borrar()
     if not origin: # Verificar si hay jugadores registrados
         print('No existen jugadores registrados')
         return
@@ -9,7 +10,7 @@ def viewStats1vs1(origin):
     # Mostrar los 3 mejores puntajes
     print('\n----- Mejores 3 Puntajes -----')
     for i, (nickname, datos) in enumerate(jugadoresOrdenados[:3], start=1):
-        print(f'{i}. {datos['nombre']} "{nickname} - Puntos: {datos['puntos']}')
+        print(f'{i}. {datos['nombre']} "{nickname}" - Puntos: {datos['puntos']}')
     # Mostrar el peor puntaje (el último de la lista ordenada)
     peorJugador = jugadoresOrdenados[-1]
     print('\n----- Peor Puntaje -----')
@@ -17,20 +18,22 @@ def viewStats1vs1(origin):
     ut.pausar()
 
 def viewStatsIA(origin):
+    ut.borrar()
     # Ordenamos los jugadores por la cantidad de derrotas contra la IA en orden descendente (de mayor a menor)
-    jugadores_ordenados = sorted(origin.items(), key=lambda item: item[1]['loseIA'], reverse=True)
+    jugadores_ordenados = sorted(origin.items(), key=lambda item: item[1].get('loseIA', 0), reverse=True)
     print("Jugadores con más derrotas contra la IA:\n")
-    for nickname, datos in jugadores_ordenados:
-        print(f'Jugador: {datos['nombre']} "{nickname}" - Derrotas contra la IA: {datos['loseIA']}')
+    for nickname, datos in jugadores_ordenados[:3]: # Mostrar los 3 jugadores con más derrotas ante la IA
+        print(f'Jugador: {datos["nombre"]} "{nickname}" - Derrotas contra la IA: {datos["loseIA"]}')
     # Definimos como calcular el promedio
     totalVictorias = 0
     totalJugadores = len(origin) # Total de jugadores registrados
     for nickname, datos in origin.items():
         totalVictorias += datos['winIA']
+        totalJugadores += 1
     # Calculamos el promedio
     if totalJugadores > 0:
-        promedio = totalVictorias/totalJugadores
+        promedio = (totalVictorias/totalJugadores)*100
     else:
         promedio = 0
-    print(f'\nPromedio de victorias contra la IA entre los jugadores: {promedio}')
+    print(f'\nPromedio de victorias contra la IA entre los jugadores: {round(promedio,1)}%')
     ut.pausar()

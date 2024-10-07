@@ -22,18 +22,6 @@ def checkFile(*param):
         if(len(param)):
             NewFile(data[0])
 
-def AddData(*param):
-    with open(MY_DATABASE,"r+") as rwf:
-        data_file=json.load(rwf)
-        if (len(param) > 1):
-            try:
-                data_file.get(param[0]).update(param[1])
-            except AttributeError:
-                pass
-                # data_file.get(param[0]).update({param[1]:param[2]})
-            # data_file.update({param[0]:param[1]})
-        else:
-            data_file.update({param[0]})
-        # data_file[llavePrincipal].update({codigo:info})
-        rwf.seek(0)
-        json.dump(data_file,rwf,indent=4)
+def AddData(origin):
+    with open(MY_DATABASE,"w") as rwf:
+        json.dump(origin,rwf,indent=4)

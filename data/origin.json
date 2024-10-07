@@ -1,0 +1,29 @@
+{
+    "juan": {
+        "nombre": "juan",
+        "nickname": "juan",
+        "puntos": 2,
+        "win": 1,
+        "lose": 0,
+        "winIA": 1,
+        "loseIA": 0
+    },
+    "jose": {
+        "nombre": "jose",
+        "nickname": "jose",
+        "puntos": 0,
+        "win": 0,
+        "lose": 1,
+        "winIA": 0,
+        "loseIA": 0
+    },
+    "david": {
+        "nombre": "david",
+        "nickname": "david",
+        "puntos": 0,
+        "win": 0,
+        "lose": 0,
+        "winIA": 0,
+        "loseIA": 0
+    }
+}

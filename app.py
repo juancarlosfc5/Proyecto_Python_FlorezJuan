@@ -4,9 +4,12 @@ import modules.messages as msg
 import modules.menu as m
 import modules.players as pl
 import modules.games as gm
+import modules.stats as st
 
 if (__name__ == '__main__'):
     origin ={}
+    cr.MY_DATABASE='data/origin.json'
+    cr.checkFile(origin)
     isApp = True
     while isApp:
         ut.borrar()
@@ -25,9 +28,9 @@ if (__name__ == '__main__'):
                 case 3: # Partida 1 vs IA
                     gm.juegoIA(origin)
                 case 4: # Estadisticas generales
-                    ut.borrar()
+                    st.viewStatsIA(origin)
                 case 5: # Tabla de puntos
-                    ut.borrar()
+                    st.viewStats1vs1(origin)
                 case 6: # Salir
                     isApp = ut.validarSalida(msg.salida)
                 case _:

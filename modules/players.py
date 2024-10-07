@@ -30,4 +30,5 @@ def addPlayer(origin): # Agregar usuario
     newPlayer['nickname'] = nickname
     origin[nickname] = newPlayer # Insertar diccionario copia dentro del diccionario Origin
     print(f'\nUsuario "{nickname}" registrado con éxito.\n')
+    cr.AddData(origin)
     ut.pausar()
