@@ -77,6 +77,8 @@ def juegoIA(origin):
                         print(f"\n¡La IA ganó esta ronda! --- Usuario: {rondasJugador} - IA {rondasIA}\n")
                         ut.pausar()
                 elif resultado == 'empate': # Validar empate
+                    contadorJugador = 0
+                    contadorIA = 0
                     print(f"\n¡Empate! --- Usuario: {rondasJugador} - IA {rondasIA}\n")
                     ut.pausar()
 
@@ -174,6 +176,8 @@ def juego1vs1(origin):
                         print(f"\n¡{jugador2} ganó esta ronda! --- {jugador1}: {rondasJugador1} - {jugador2} {rondasJugador2}\n")
                         ut.pausar()
                 elif resultado == 'empate': # Validar empate
+                    contadorJugador1 = 0
+                    contadorJugador2 = 0
                     print(f"\n¡Empate! --- {jugador1}: {rondasJugador1} - {jugador2} {rondasJugador2}\n")
                     ut.pausar()
 
