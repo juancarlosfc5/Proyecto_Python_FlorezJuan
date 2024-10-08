@@ -6,7 +6,7 @@ import modules.messages as msg
 opciones = ['piedra', 'papel', 'tijera']
 
 # Jugador vs IA
-def rondaIA(origin):
+def rondaIA(origin): # Funcion para ejecutar la ronda vs IA
     ut.borrar()
     print('Inicia la ronda\n')
     eleccionIA = random.choice(opciones) # La IA elige una opción al azar
@@ -24,7 +24,7 @@ def rondaIA(origin):
     else:
         return 'ia' # Retorno de IA como ganador
     
-def juegoIA(origin):
+def juegoIA(origin): # Funcion para jugar la partida vs IA
     rondasJugador = 0
     rondasIA = 0
     contadorJugador = 0
@@ -35,7 +35,7 @@ def juegoIA(origin):
     while isJuegoIA:
         ut.borrar()
         nickname = input('Ingrese el nickname del usuario: ')
-        if nickname not in origin: # Verificar si el nickname esta disponible
+        if nickname not in origin: # Verificar si el nickname ya fue creado
             print(msg.errorNoNickname)
             ut.pausar()
             break
@@ -95,7 +95,7 @@ def juegoIA(origin):
                 isJuegoIA = False
 
 # Jugador 1 vs 1
-def ronda1vs1(origin):
+def ronda1vs1(origin): # Funcion para ejecutar la ronda 1vs1
     ut.borrar()
     print('Inicia la ronda\n')
     eleccionJugador1 = input('Jugador 1 escribe tu elección piedra, papel o tijera: ').lower() # El jugador elige su jugada
@@ -116,7 +116,7 @@ def ronda1vs1(origin):
     else:
         return 'jugador2' # Retorno del jugador 2 como ganador
     
-def juego1vs1(origin):
+def juego1vs1(origin): # Funcion para jugar la partida 1vs1
     rondasJugador1 = 0
     rondasJugador2 = 0
     contadorJugador1 = 0

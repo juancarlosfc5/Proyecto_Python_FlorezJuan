@@ -14,9 +14,9 @@ players = {
     'loseIA' : 0,
 }
 
-def addPlayer(origin): # Agregar usuario
+def addPlayer(origin): # Funcion agregar usuario
     ut.borrar()
-    newPlayer = copy.deepcopy(players) # Copiar diccionario
+    newPlayer = copy.deepcopy(players) # Copiar diccionario players vacio
     nombre = input('Ingrese el nombre completo del usuario: ')
     while True:
         ut.borrar()
@@ -26,9 +26,9 @@ def addPlayer(origin): # Agregar usuario
             ut.pausar()
         else:
             break
-    newPlayer['nombre'] = nombre
-    newPlayer['nickname'] = nickname
-    origin[nickname] = newPlayer # Insertar diccionario copia dentro del diccionario Origin
+    newPlayer['nombre'] = nombre # Insertar el nombre dentro de la copia del diccionario players
+    newPlayer['nickname'] = nickname # Insertar el nickname dentro de la copia del diccionario players
+    origin[nickname] = newPlayer # Insertar toda la copia del diccionario players dentro del diccionario Origin
     print(f'\nUsuario "{nickname}" registrado con éxito.\n')
     cr.AddData(origin)
     ut.pausar()
