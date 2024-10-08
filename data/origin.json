@@ -2,28 +2,64 @@
     "juan": {
         "nombre": "juan",
         "nickname": "juan",
-        "puntos": 2,
-        "win": 1,
+        "puntos": 12,
+        "win": 6,
         "lose": 0,
-        "winIA": 1,
-        "loseIA": 0
+        "winIA": 3,
+        "loseIA": 2
     },
     "jose": {
         "nombre": "jose",
         "nickname": "jose",
-        "puntos": 0,
-        "win": 0,
+        "puntos": 4,
+        "win": 2,
         "lose": 1,
         "winIA": 0,
-        "loseIA": 0
+        "loseIA": 5
     },
     "david": {
         "nombre": "david",
         "nickname": "david",
         "puntos": 0,
         "win": 0,
-        "lose": 0,
-        "winIA": 0,
+        "lose": 3,
+        "winIA": 4,
+        "loseIA": 1
+    },
+    "laura": {
+        "nombre": "laura",
+        "nickname": "laura",
+        "puntos": 6,
+        "win": 3,
+        "lose": 1,
+        "winIA": 1,
+        "loseIA": 4
+    },
+    "elkin": {
+        "nombre": "elkin",
+        "nickname": "elkin",
+        "puntos": 0,
+        "win": 0,
+        "lose": 2,
+        "winIA": 1,
+        "loseIA": 4
+    },
+    "susana": {
+        "nombre": "susana",
+        "nickname": "susana",
+        "puntos": 0,
+        "win": 0,
+        "lose": 2,
+        "winIA": 4,
+        "loseIA": 1
+    },
+    "daniel": {
+        "nombre": "daniel",
+        "nickname": "daniel",
+        "puntos": 0,
+        "win": 0,
+        "lose": 2,
+        "winIA": 5,
         "loseIA": 0
     }
 }

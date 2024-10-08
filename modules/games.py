@@ -55,7 +55,7 @@ def juegoIA(origin):
                         print('\n¡Has ganado dos rondas consecutivas! Escudo activado')
                     if escudoIA == True: # Verificar escudo de la IA
                         escudoIA = False
-                        print('\n¡La IA perdió, pero su escudo la protegió!\n')
+                        print(f'\n¡La IA perdió, pero su escudo la protegió! --- Usuario: {rondasJugador} - IA {rondasIA}\n')
                         ut.pausar()
                     else: # Incrementar ronda del jugador
                         rondasJugador += 1
@@ -69,7 +69,7 @@ def juegoIA(origin):
                         print('\n¡La IA ha ganado dos rondas consecutivas! Escudo activado')
                     if escudoJugador == True: # Verificar escudo del jugador
                         escudoJugador = False
-                        print('\n¡Has perdido, pero tu escudo te protegiós!\n')
+                        print(f'\n¡Has perdido, pero tu escudo te protegiós! --- Usuario: {rondasJugador} - IA {rondasIA}\n')
                         ut.pausar()
                     else: # Incrementar ronda de la IA
                         rondasIA += 1
@@ -155,7 +155,7 @@ def juego1vs1(origin):
                         print(f'\n¡{jugador1} ha ganado dos rondas consecutivas! Escudo activado')
                     if escudoJugador2 == True: # Verificar escudo del jugador 2
                         escudoJugador2 = False
-                        print(f'\n¡{jugador2} perdió, pero su escudo la protegió!\n')
+                        print(f'\n¡{jugador2} perdió, pero su escudo la protegió! --- {jugador1}: {rondasJugador1} - {jugador2} {rondasJugador2}\n')
                         ut.pausar()
                     else: # Incrementar ronda del jugador 1
                         rondasJugador1 += 1
@@ -169,7 +169,7 @@ def juego1vs1(origin):
                         print(f'\n¡{jugador2} ha ganado dos rondas consecutivas! Escudo activado')
                     if escudoJugador1 == True: # Verificar escudo del jugador 1
                         escudoJugador1 = False
-                        print(f'\n¡{jugador1} perdió, pero su escudo la protegió!\n')
+                        print(f'\n¡{jugador1} perdió, pero su escudo la protegió! --- {jugador1}: {rondasJugador1} - {jugador2} {rondasJugador2}\n')
                         ut.pausar()
                     else: # Incrementar ronda de la IA
                         rondasJugador2 += 1
