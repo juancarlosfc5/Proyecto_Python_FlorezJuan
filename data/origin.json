@@ -2,8 +2,8 @@
     "juan": {
         "nombre": "juan",
         "nickname": "juan",
-        "puntos": 12,
-        "win": 6,
+        "puntos": 14,
+        "win": 7,
         "lose": 0,
         "winIA": 3,
         "loseIA": 2
@@ -22,7 +22,7 @@
         "nickname": "david",
         "puntos": 0,
         "win": 0,
-        "lose": 3,
+        "lose": 4,
         "winIA": 4,
         "loseIA": 1
     },
@@ -61,5 +61,14 @@
         "lose": 2,
         "winIA": 5,
         "loseIA": 0
+    },
+    "andres": {
+        "nombre": "andres",
+        "nickname": "andres",
+        "puntos": 0,
+        "win": 0,
+        "lose": 0,
+        "winIA": 0,
+        "loseIA": 1
     }
 }

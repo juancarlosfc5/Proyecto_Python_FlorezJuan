@@ -3,7 +3,7 @@ import modules.utils as ut
 import modules.core as cr
 import modules.messages as msg
 
-# Diccionario vacío
+# Diccionario jugador vacío
 players = {
     'nombre': '',
     'nickname': '',

@@ -1,9 +1,7 @@
-import copy
 import random
 import modules.utils as ut
 import modules.core as cr
 import modules.messages as msg
-import modules.players as pl
 
 opciones = ['piedra', 'papel', 'tijera']
 
