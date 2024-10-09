@@ -70,5 +70,14 @@
         "lose": 1,
         "winIA": 0,
         "loseIA": 1
+    },
+    "camilo": {
+        "nombre": "camilo",
+        "nickname": "camilo",
+        "puntos": 0,
+        "win": 0,
+        "lose": 0,
+        "winIA": 0,
+        "loseIA": 1
     }
 }

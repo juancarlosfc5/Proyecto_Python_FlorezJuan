@@ -7,7 +7,7 @@ import modules.stats as st
 import modules.utils as ut
 
 if (__name__ == '__main__'):
-    origin ={} # Diccionario base
+    origin = {} # Diccionario base
     cr.MY_DATABASE='data/origin.json' # Establecer ruta del archivo json
     cr.checkFile(origin) # Verificacion archivo json
     isApp = True
